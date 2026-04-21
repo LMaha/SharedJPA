@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- Documentation related to the GCP Artifactory:
+  https://plslogistics.atlassian.net/wiki/spaces/3/pages/2083684367/GCP+Artifactory -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.pls</groupId>
+  <artifactId>SharedJPA</artifactId>
+  <version>1.0.23-SNAPSHOT</version>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<extensions>
+			<extension>
+				<groupId>com.google.cloud.artifactregistry</groupId>
+				<artifactId>artifactregistry-maven-wagon</artifactId>
+				<version>2.1.5</version>
+			</extension>
+		</extensions>
+	</build>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<env.BRANCH_NAME>uat</env.BRANCH_NAME>
+		<java.version>1.8</java.version>
+		<pls-artifactory-push-url>artifactregistry://us-east4-maven.pkg.dev/pls-logistics-services</pls-artifactory-push-url>
+	</properties>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>pls-gcp-snapshot</id>
+			<url>${pls-artifactory-push-url}/maven-snapshot</url>
+		</snapshotRepository>
+		<repository>
+			<id>pls-gcp-release</id>
+			<url>${pls-artifactory-push-url}/maven-release</url>
+		</repository>
+	</distributionManagement>
+  <dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.18.Final</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.4.18.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.1.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.16</version>
+		</dependency>
+	  <dependency>
+		  <groupId>org.springframework.data</groupId>
+		  <artifactId>spring-data-jpa</artifactId>
+		  <version>1.11.16.RELEASE</version>
+	  </dependency>
+  </dependencies>
+</project>

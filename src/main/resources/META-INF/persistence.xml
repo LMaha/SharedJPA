@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+	<persistence-unit name="PLS30QA"
+					  transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!--pls-->
+		<class>Entities.PLS30.pls.approval_types</class>
+		<class>Entities.PLS30.pls.ax_payload_log</class>
+		<class>Entities.PLS30.pls.carrier_pickup_confirm</class>
+		<class>Entities.PLS30.pls.carriers</class>
+		<class>Entities.PLS30.pls.customer</class>
+		<class>Entities.PLS30.pls.customer_bill_address</class>
+		<class>Entities.PLS30.pls.customer_location</class>
+		<class>Entities.PLS30.pls.invoice_audit</class>
+		<class>Entities.PLS30.pls.load</class>
+		<class>Entities.PLS30.pls.load_aud</class>
+		<class>Entities.PLS30.pls.load_audit_approval</class>
+		<class>Entities.PLS30.pls.load_carrier</class>
+		<class>Entities.PLS30.pls.load_invoice_data_adjustment</class>
+		<class>Entities.PLS30.pls.load_origin_destination</class>
+		<class>Entities.PLS30.pls.load_pricing</class>
+		<class>Entities.PLS30.pls.load_pricing_adjustment</class>
+		<class>Entities.PLS30.pls.load_pricing_aud</class>
+		<class>Entities.PLS30.pls.load_request_adjustment</class>
+		<class>Entities.PLS30.pls.load_status</class>
+		<class>Entities.PLS30.pls.load_stopoff</class>
+		<class>Entities.PLS30.pls.pls_office</class>
+		<class>Entities.PLS30.pls.pricing_line_item</class>
+		<class>Entities.PLS30.pls.pricing_line_item_type</class>
+		<class>Entities.PLS30.pls.required_field_audit_history</class>
+		<class>Entities.PLS30.pls.role</class>
+		<class>Entities.PLS30.pls.team</class>
+		<class>Entities.PLS30.pls.user_roles</class>
+		<class>Entities.PLS30.pls.users</class>
+		<class>Entities.PLS30.pls.zipcode</class>
+		<class>Entities.PLS30.pls.carrier_change_history_result</class>
+		<class>Entities.PLS30.pls.customer_change_history_result</class>
+		<class>Entities.PLS30.pls.customer_credit_history</class>
+		<class>Entities.PLS30.pls.load_change_history_result</class>
+		<class>Entities.PLS30.pls.customer_invoice_req_fields</class>
+		<!--pls_quote-->
+		<class>Entities.PLS30.pls_quote.dat_rates</class>
+		<class>Entities.PLS30.pls_quote.dat_regions</class>
+		<class>Entities.PLS30.pls_quote.dat_type</class>
+		<class>Entities.PLS30.pls_quote.sys_appl</class>
+		<class>Entities.PLS30.pls_quote.sys_holiday_adj</class>
+		<class>Entities.PLS30.pls_quote.sys_rate_adj</class>
+		<!--pls_ltl-->
+		<class>Entities.PLS30.pls_ltl.p44_quote_request_logs</class>
+		<class>Entities.PLS30.pls_ltl.p44_quote_response_logs</class>
+		<!--pls_tracking-->
+		<class>Entities.PLS30.pls_tracking.tracking_orders</class>
+		<class>Entities.PLS30.pls_tracking.order_stops</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+					  value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url"
+					  value="jdbc:postgresql://10.160.0.11:5432/PLS30" />
+			<property name="javax.persistence.jdbc.user"
+					  value="pls" />
+			<property name="javax.persistence.jdbc.password"
+					  value="Lucky10" />
+			<property name="hibernate.dialect"
+					  value="org.hibernate.dialect.PostgreSQLDialect" /> <!-- DB Dialect -->
+			<!-- 			<property name="hibernate.hbm2ddl.auto" value="update" /> create / create-drop / update -->
+			<property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+			<property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="PLS30UAT"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!--pls-->
+		<class>Entities.PLS30.pls.approval_types</class>
+		<class>Entities.PLS30.pls.ax_payload_log</class>
+		<class>Entities.PLS30.pls.carrier_pickup_confirm</class>
+		<class>Entities.PLS30.pls.carriers</class>
+		<class>Entities.PLS30.pls.customer</class>
+		<class>Entities.PLS30.pls.customer_bill_address</class>
+		<class>Entities.PLS30.pls.customer_location</class>
+		<class>Entities.PLS30.pls.invoice_audit</class>
+		<class>Entities.PLS30.pls.load</class>
+		<class>Entities.PLS30.pls.load_aud</class>
+		<class>Entities.PLS30.pls.load_audit_approval</class>
+		<class>Entities.PLS30.pls.load_carrier</class>
+		<class>Entities.PLS30.pls.load_invoice_data_adjustment</class>
+		<class>Entities.PLS30.pls.load_origin_destination</class>
+		<class>Entities.PLS30.pls.load_pricing</class>
+		<class>Entities.PLS30.pls.load_pricing_adjustment</class>
+		<class>Entities.PLS30.pls.load_pricing_aud</class>
+		<class>Entities.PLS30.pls.load_request_adjustment</class>
+		<class>Entities.PLS30.pls.load_status</class>
+		<class>Entities.PLS30.pls.load_stopoff</class>
+		<class>Entities.PLS30.pls.pls_office</class>
+		<class>Entities.PLS30.pls.pricing_line_item</class>
+		<class>Entities.PLS30.pls.pricing_line_item_type</class>
+		<class>Entities.PLS30.pls.required_field_audit_history</class>
+		<class>Entities.PLS30.pls.role</class>
+		<class>Entities.PLS30.pls.team</class>
+		<class>Entities.PLS30.pls.user_roles</class>
+		<class>Entities.PLS30.pls.users</class>
+		<class>Entities.PLS30.pls.zipcode</class>
+		<class>Entities.PLS30.pls.carrier_change_history_result</class>
+		<class>Entities.PLS30.pls.customer_change_history_result</class>
+		<class>Entities.PLS30.pls.customer_credit_history</class>
+		<class>Entities.PLS30.pls.load_change_history_result</class>
+		<class>Entities.PLS30.pls.customer_invoice_req_fields</class>
+		<!--pls_quote-->
+		<class>Entities.PLS30.pls_quote.dat_rates</class>
+		<class>Entities.PLS30.pls_quote.dat_regions</class>
+		<class>Entities.PLS30.pls_quote.dat_type</class>
+		<class>Entities.PLS30.pls_quote.sys_appl</class>
+		<class>Entities.PLS30.pls_quote.sys_holiday_adj</class>
+		<class>Entities.PLS30.pls_quote.sys_rate_adj</class>
+		<!--pls_ltl-->
+		<class>Entities.PLS30.pls_ltl.p44_quote_request_logs</class>
+		<class>Entities.PLS30.pls_ltl.p44_quote_response_logs</class>
+		<!--pls_tracking-->
+		<class>Entities.PLS30.pls_tracking.tracking_orders</class>
+		<class>Entities.PLS30.pls_tracking.order_stops</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://10.160.0.12:5432/PLS30" />
+			<property name="javax.persistence.jdbc.user"
+				value="postgres" />
+			<property name="javax.persistence.jdbc.password"
+				value="pUIdylLnZLtM03cvG" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.PostgreSQLDialect" /> <!-- DB Dialect -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="update" /> create / create-drop / update -->
+			<property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+			<property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="PLS30PROD" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!--pls-->
+		<class>Entities.PLS30.pls.approval_types</class>
+		<class>Entities.PLS30.pls.ax_payload_log</class>
+		<class>Entities.PLS30.pls.carrier_pickup_confirm</class>
+		<class>Entities.PLS30.pls.carriers</class>
+		<class>Entities.PLS30.pls.customer</class>
+		<class>Entities.PLS30.pls.customer_bill_address</class>
+		<class>Entities.PLS30.pls.customer_location</class>
+		<class>Entities.PLS30.pls.invoice_audit</class>
+		<class>Entities.PLS30.pls.load</class>
+		<class>Entities.PLS30.pls.load_aud</class>
+		<class>Entities.PLS30.pls.load_audit_approval</class>
+		<class>Entities.PLS30.pls.load_carrier</class>
+		<class>Entities.PLS30.pls.load_invoice_data_adjustment</class>
+		<class>Entities.PLS30.pls.load_origin_destination</class>
+		<class>Entities.PLS30.pls.load_pricing</class>
+		<class>Entities.PLS30.pls.load_pricing_adjustment</class>
+		<class>Entities.PLS30.pls.load_pricing_aud</class>
+		<class>Entities.PLS30.pls.load_request_adjustment</class>
+		<class>Entities.PLS30.pls.load_status</class>
+		<class>Entities.PLS30.pls.load_stopoff</class>
+		<class>Entities.PLS30.pls.pls_office</class>
+		<class>Entities.PLS30.pls.pricing_line_item</class>
+		<class>Entities.PLS30.pls.pricing_line_item_type</class>
+		<class>Entities.PLS30.pls.required_field_audit_history</class>
+		<class>Entities.PLS30.pls.role</class>
+		<class>Entities.PLS30.pls.team</class>
+		<class>Entities.PLS30.pls.user_roles</class>
+		<class>Entities.PLS30.pls.users</class>
+		<class>Entities.PLS30.pls.zipcode</class>
+		<class>Entities.PLS30.pls.carrier_change_history_result</class>
+		<class>Entities.PLS30.pls.customer_change_history_result</class>
+		<class>Entities.PLS30.pls.customer_credit_history</class>
+		<class>Entities.PLS30.pls.load_change_history_result</class>
+		<!--pls_quote-->
+		<class>Entities.PLS30.pls_quote.dat_rates</class>
+		<class>Entities.PLS30.pls_quote.dat_regions</class>
+		<class>Entities.PLS30.pls_quote.dat_type</class>
+		<class>Entities.PLS30.pls_quote.sys_appl</class>
+		<class>Entities.PLS30.pls_quote.sys_holiday_adj</class>
+		<class>Entities.PLS30.pls_quote.sys_rate_adj</class>
+		<!--pls_ltl-->
+		<class>Entities.PLS30.pls_ltl.p44_quote_request_logs</class>
+		<class>Entities.PLS30.pls_ltl.p44_quote_response_logs</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://10.160.6.10:5432/PLS30" />
+			<property name="javax.persistence.jdbc.user"
+				value="postgres" />
+			<property name="javax.persistence.jdbc.password"
+				value="pUIdylLnZLtM03cvG" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.PostgreSQLDialect" /> <!-- DB Dialect -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="update" /> create / create-drop / update -->
+			<property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+			<property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="PLS20QA" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>Entities.PLS20.flatbed.holidays</class>
+		<class>Entities.PLS20.flatbed.international_holidays</class>
+		<class>Entities.PLS20.flatbed.int_audit</class>
+		<class>Entities.PLS20.flatbed.int_audit_details</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+					  value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url"
+					  value="jdbc:postgresql://10.160.0.11:5432/PLS20" />
+			<property name="javax.persistence.jdbc.user"
+					  value="flatbed" />
+			<property name="javax.persistence.jdbc.password"
+					  value="flatbedqa" />
+			<property name="hibernate.dialect"
+					  value="org.hibernate.dialect.PostgreSQLDialect" /> <!-- DB Dialect -->
+			<!-- 			<property name="hibernate.hbm2ddl.auto" value="update" /> create / create-drop / update -->
+			<property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+			<property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="PLS20UAT" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>Entities.PLS20.flatbed.holidays</class>
+		<class>Entities.PLS20.flatbed.international_holidays</class>
+		<class>Entities.PLS20.flatbed.int_audit</class>
+		<class>Entities.PLS20.flatbed.int_audit_details</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+					  value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url"
+					  value="jdbc:postgresql://10.160.0.12:5432/PLS20" />
+			<property name="javax.persistence.jdbc.user"
+					  value="flatbed" />
+			<property name="javax.persistence.jdbc.password"
+					  value="flatbedqa" />
+			<property name="hibernate.dialect"
+					  value="org.hibernate.dialect.PostgreSQLDialect" /> <!-- DB Dialect -->
+			<!-- 			<property name="hibernate.hbm2ddl.auto" value="update" /> create / create-drop / update -->
+			<property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+			<property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="PLS20PROD" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>Entities.PLS20.flatbed.holidays</class>
+		<class>Entities.PLS20.flatbed.international_holidays</class>
+		<class>Entities.PLS20.flatbed.int_audit</class>
+		<class>Entities.PLS20.flatbed.int_audit_details</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+					  value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url"
+					  value="jdbc:postgresql://10.160.6.10:5432/PLS20" />
+			<property name="javax.persistence.jdbc.user"
+					  value="flatbed" />
+			<property name="javax.persistence.jdbc.password"
+					  value="flt3#tb3d" />
+			<property name="hibernate.dialect"
+					  value="org.hibernate.dialect.PostgreSQLDialect" /> <!-- DB Dialect -->
+			<!-- 			<property name="hibernate.hbm2ddl.auto" value="update" /> create / create-drop / update -->
+			<property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+			<property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+		</properties>
+	</persistence-unit>
+</persistence>
