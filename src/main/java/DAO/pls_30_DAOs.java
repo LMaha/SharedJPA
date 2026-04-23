@@ -22,7 +22,29 @@ public class pls_30_DAOs extends BaseDAO  {
 	public pls_30_DAOs() throws IOException {
 		super();
 	}
+    private static EntityManagerFactory emf30;
 
+   private static EntityManagerFactory getFactory() {
+        if (emf30 == null || !emf30.isOpen()) {
+            emf30 = SetupPLS30Connection();
+        }
+        return emf30;
+    }
+
+	    public static load GetLoadwithLoadId(long loadId) {
+        // 2. Reuse the factory, only create the EntityManager (which is fast/lightweight)
+        EntityManager em = getFactory().createEntityManager();
+        try {
+            String query = "Select l from load l where l.load_id=:loadId";
+            TypedQuery<load> ldQuery = em.createQuery(query, load.class);
+            return ldQuery.setParameter("loadId", loadId).getSingleResult();
+        } catch (NoResultException e) {
+            return null; // Return null instead of a blank object for cleaner test assertions
+        } finally {
+            // 3. ONLY close the EntityManager, keep the Factory open for the next test!
+            em.close();
+        }
+    }
 	/**
 	 * database:3.0, schema:pls, table:customer
 	 * Return customer details for a load id
